@@ -1,0 +1,64 @@
+
+  $elemColor: #49f7ab90;
+  $contenteditableColor: rgba(235, 31, 31, 0);
+
+
+.elementList {
+  position: relative;
+  width: 260px;
+  min-height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color: white;
+  border: 2px solid $elemColor;
+
+  -webkit-transition: background-color 500ms linear;
+  -moz-transition: background-color 500ms linear;
+  -o-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+  font-family: 'Roboto', Arial, sans-serif;
+
+  &:hover {
+    background-color: $elemColor;
+  }
+
+  .textElement {
+    display: flex;
+    margin: 0;
+    padding-left: 5px;
+  }
+
+.span{
+  padding-left: 3px;
+}
+
+  .textArea {
+    padding-left: 3px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    outline:none;
+    white-space: pre-line;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  
+
+  .listButtonСhange {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  
+}
+
+

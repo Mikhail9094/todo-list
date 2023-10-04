@@ -1,0 +1,14 @@
+.todoList {
+  width: 260px;
+  min-height: 50px;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.todoList::-webkit-scrollbar {
+  width: 0;
+}
+
+.text {
+  padding-left: 4px;
+}

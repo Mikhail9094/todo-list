@@ -1,0 +1,59 @@
+
+  $urlPlus: url("../img/button/plus.png");
+  $urlDelete: url("../img/button/delete.png");
+  $urlEdit: url("../img//button/document_edit.png");
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  border-radius: 2px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+@mixin buttonItems{
+  width: 15px;
+  height: 15px;
+  margin-left: 2px;
+  margin-right: 8px;
+  background-color: rgba(252, 250, 250, 0);
+  background-repeat : no-repeat;
+  background-size: contain;
+}
+
+.buttonPlus {
+  width: 23px;
+  height: 23px;
+  margin-left: 3px;
+
+  background-color: #49f7ac;
+  background-image: $urlPlus;
+}
+
+.buttonDelete, .buttonEdit {
+ @include buttonItems();
+ 
+ &:hover {
+  opacity: 0.8;
+}
+
+&:active {
+  transform: scale(0.95);
+}
+
+}
+
+.buttonDelete {
+  background-image: $urlDelete;
+}
+
+.lockButtonDelete {
+  @include buttonItems();
+  background-image: $urlDelete;
+  cursor: default;
+}
+
+.buttonEdit {
+  background-image: $urlEdit;
+ }

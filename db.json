@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": "4OfiWCPCzBLm-CW0crntv",
+      "name": "4664",
+      "completed": false
+    },
+    {
+      "id": "6eVcKvYnYhEDLhj5OcPOg",
+      "name": "лол",
+      "completed": false
+    },
+    {
+      "id": "3kX9S4R_8NE48ZlJR8SFj",
+      "name": "111",
+      "completed": false
+    },
+    {
+      "id": "b6ci4B09V7xi-Lz3ZsSfS",
+      "name": "отлот",
+      "completed": false
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

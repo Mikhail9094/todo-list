@@ -1,0 +1,21 @@
+form {
+  margin-bottom: 4px;
+  box-sizing: border-box;
+}
+.input {
+  width: 225px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+
+  padding-left: 3px;
+  margin-left: 0;
+  border-color: #49f7ac;
+  cursor: pointer;
+}
+
+.input:focus {
+  outline-width: 0;
+  border: 1.7px solid blue;
+  cursor: auto;
+}

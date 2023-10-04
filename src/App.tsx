@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.scss";
+import { useEffect, useState } from "react";
+import AddTodoForm from "./Components/AddTodoForm/AddTodoForm";
+import TodoList from "./Components/TodoList/TodoList";
+import { MainParameters } from "./Components/types";
+import { createContext } from "react";
+import { changePosts, createPosts, deletePosts, getPosts } from "./Components/api/requests";
 
-function App() {
+export const TodoContext = createContext({} as Props);
+
+interface Props {
+  todos: MainParameters[];
+  onAdd(newItem: MainParameters): void;
+  onDelete(id: string): void;
+  onChange(item: MainParameters): void;
+}
+
+type D = {
+  body: string;
+  id: number;
+};
+
+function App() { 
+
+  const [todos, setTodos] = useState<MainParameters[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const data = await getPosts();
+      setTodos(data);
+    })();
+  }, []);
+
+
+  const onAdd = ( newItem: MainParameters) => {
+  
+    setTodos((prev) => [...prev, newItem]);
+    createPosts(newItem)
+  };
+
+  const onDelete = (id: string) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+    deletePosts(id)
+  };
+
+  const onChange = (item: MainParameters) => {
+    changePosts(item)
+   
+    // setTodos((prev) => prev.map((todo) => (todo.id === item.id ? item : todo)));
+  };
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className={styles.wrapper}>
+      <div className={styles.todo}>
+        <h1>To-do list</h1>
+        <TodoContext.Provider
+          value={{ todos: todos, onAdd: onAdd, onDelete: onDelete, onChange: onChange }}
         >
-          Learn React
-        </a>
-      </header>
+          <AddTodoForm />
+          <TodoList addClass="hello" />
+        </TodoContext.Provider>
+      </div>
     </div>
   );
 }
-
 export default App;
