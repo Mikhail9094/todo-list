@@ -1,6 +1,6 @@
 import styles from "./todoList.module.scss";
 import Item from "../Item/Item";
-import { TodoContext } from "../../App";
+import { TodoContext } from "../context";
 import { useContext } from "react";
 import styleApp from '../../App.module.scss'
 
@@ -13,7 +13,7 @@ function TodoList({addClass}: Props) {
       {todos.length > 0 ? (
         todos.map((todo, i) => (
           <Item
-            key={i}
+            key={todo.id}
             task={todo}
             onDelete={onDelete}
             onChange={onChange}

@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import styles from "./addTodoForm.module.scss";
 import { useContext, useState } from "react";
 import { nanoid } from "nanoid";
-import { TodoContext } from "../../App";
+import { TodoContext } from "../context";
 
 function AddTodoForm() {
   const [text, setText] = useState("");
